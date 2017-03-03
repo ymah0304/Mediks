@@ -17,7 +17,7 @@
   <body class="scroll-assist">
 
     <!-- Help Form -->
-    <!-- <div class="helpBox">
+    <div class="helpBox">
       <div class="help-header">
         <span class="help-title">
           Chat Assistant
@@ -25,15 +25,15 @@
       </div>
       <div class="help-body-displayname">
         <p>Choose Your Display Name</p>
-        <input type="text" id="name">
+        <input type="text" id="name" autocomplete="off">
       </div>
       <button type="submit" class="help-footer" id="submitName">Submit</button>
-    </div> -->
+    </div>
 
     <!-- Help Button -->
-    <!-- <button class="helpButton">
+    <button class="helpButton">
       <span class="ti-comment-alt"></span>
-    </button> -->
+    </button>
 
     <!-- Navbar -->
     <div class="nav-container">
@@ -457,6 +457,21 @@
           socket.emit('fetchMessages', event.target.textContent);
         };
 
+        var msgBoxHandler = function(e) {
+          debugger;
+          if(e.which == 13 && !e.shiftKey) {
+            socket.emit('sendMessage', userChosen ? { message: $("#messageBox").val(), user: userChosen } : $("#messageBox").val());
+            var $message = $(`
+              <div class="help-message help-message-primary">
+                <span>${ $("#messageBox").val() }</span>
+              </div>
+            `);
+            $('.help-body').append($message);
+            $("#messageBox").val("");
+            e.preventDefault();
+          }
+        };
+
         socket.on('adminJoinedSuccessfully', function(users) {
           var $chatBoxContent = $(`
             <div>
@@ -477,30 +492,18 @@
 
         socket.on('userJoinedSuccessfully', function() {
           var $chatBoxContent = $(`
-            <div class="help-header">
-              <span class="help-title">
-                Chat Assistant
-              </span>
-            </div>
-            <div class="help-body">
-            </div>
-            <textarea class="help-footer" rows="1" placeholder="Send a message..." id="messageBox"></textarea>
-          `);
-          $helpBox.html($chatBoxContent);
-        });
-
-        $helpBox.on('keypress', $("#messageBox"), function(e) {
-          if(e.which == 13 && !e.shiftKey) {
-            socket.emit('sendMessage', userChosen ? { message: $("#messageBox").val(), user: userChosen } : $("#messageBox").val());
-            var $message = $(`
-              <div class="help-message help-message-primary">
-                <span>${ $("#messageBox").val() }</span>
+            <div>
+              <div class="help-header">
+                <span class="help-title">
+                  Chat Assistant
+                </span>
               </div>
-            `);
-            $('.help-body').append($message);
-            $("#messageBox").val("");
-            e.preventDefault();
-          }
+              <div class="help-body">
+              </div>
+            <div>
+          `);
+          $('<textarea class="help-footer" rows="1" placeholder="Send a message..." id="messageBox"></textarea>').keypress(msgBoxHandler).appendTo($chatBoxContent);
+          $helpBox.html($chatBoxContent);
         });
 
         // $helpBox.on('click', $('.user'), function(event) {
@@ -519,17 +522,17 @@
               </div>
               <div class="help-body">
               </div>
-              <textarea class="help-footer" rows="1" placeholder="Send a message..." id="messageBox"></textarea>
             </div>
           `);
           $('<span class="ti-angle-left"></span>').click(function() { socket.emit('userPage') }).prependTo($chatBoxContent.find('.help-header'));
           $helpBox.html($chatBoxContent);
           for (var i = 0; i < messages.length; i++) {
             var $message = $(`
-              <div class="help-message help-message-secondary">
-                <span>${ messages[i] }</span>
+              <div class="help-message help-message-${messages[i].type === 'admin' ? 'primary' : 'secondary'}">
+                <span>${ messages[i].message }</span>
               </div>
             `);
+            $('<textarea class="help-footer" rows="1" placeholder="Send a message..." id="messageBox"></textarea>').keypress(msgBoxHandler).appendTo($chatBoxContent);
             $('.help-body').append($message);
           }
         });
