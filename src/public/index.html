@@ -269,8 +269,8 @@
           <div class="row">
             <div class="col-sm-12 text-center">
               <h2 class="uppercase mb8">Purchase a Franchise</h2>
-              <p class="lead mt24 mb40">To Purchase a Franchise Just Call The Number Below and We Will Discuss With You.</p>
-              <a class="btn btn-lg btn-white mb0" modal-link="2">Call Us: 061-6224427</a>
+              <p class="lead mt24 mb40">To Purchase a Franchise Just Contact Us Below and We Will Discuss With You.</p>
+              <a class="btn btn-lg btn-white mb0" href="mailto:support@mediksplus.com.pk " modal-link="2">Contact Us</a>
             </div>
           </div>
         </div>
@@ -298,6 +298,7 @@
               <hr>
               <p>
                 <strong>Phone:</strong> 061 622 4427, 061 622 4428
+                <strong>Email:</strong> support@mediksplus.com.pk
               </p>
             </div>
         </section>
@@ -311,21 +312,41 @@
               <div class="testimonials text-slider slider-arrow-controls">
                 <ul class="slides">
                   <li>
-                    <p class="lead">Domestic confined any but son bachelor advanced remember. How proceed offered her offence shy forming. Returned peculiar pleasant but appetite differed she. Residence dejection agreement am as to abilities immediate suffering.</p>
+                    <p class="lead">No parallel or even competitive exists in Multan. Perfect services and perfectly nice environment.</p>
                     <div class="text-center">
-                      <h6 class="uppercase">Ahmed Mahmud</h6>
+                      <h6 class="uppercase">Pharmacist Sheraz - 5★</h6>
                     </div>
                   </li>
                   <li>
-                    <p class="lead">Open know age use whom him than lady was. On lasted uneasy exeter my itself effect spirit. At design he vanity at cousin longer looked ye. Design praise me father an favour. As greatly replied it windows of an minuter behaved passage.</p>
+                    <p class="lead">Best pharmacy in Multan. Revolution in retail.</p>
                     <div class="text-center">
-                      <h6 class="uppercase">Ali Butt</h6>
+                      <h6 class="uppercase">Raja Abdullah - 5★</h6>
                     </div>
                   </li>
                   <li>
-                    <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    <p class="lead">Excellent service, outstanding environment, lacks a little variety, I hope you people will manage it soon!</p>
                     <div class="text-center">
-                      <h6 class="uppercase">Aamna Muzafir</h6>
+                      <h6 class="uppercase">Syed Asad Shah - 5★</h6>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="text-center">
+                      <h6 class="uppercase">Fahim Shah - 5★</h6>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="text-center">
+                      <h6 class="uppercase">Najam Abbas - 5★</h6>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="text-center">
+                      <h6 class="uppercase">Javed Iqbal - 5★</h6>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="text-center">
+                      <h6 class="uppercase">Ali Arslan - 5★</h6>
                     </div>
                   </li>
                 </ul>
@@ -392,6 +413,7 @@
                 });
               }
             });
+            $('#name').focus();
           } else {
             $helpBtn.children("span").addClass("ti-comment-alt").removeClass("ti-close");
             $({deg: 90}).animate({deg: 0}, {
@@ -458,8 +480,8 @@
         };
 
         var msgBoxHandler = function(e) {
-          debugger;
           if(e.which == 13 && !e.shiftKey) {
+            console.log($("#messageBox").val());
             socket.emit('sendMessage', userChosen ? { message: $("#messageBox").val(), user: userChosen } : $("#messageBox").val());
             var $message = $(`
               <div class="help-message help-message-primary">
@@ -525,6 +547,7 @@
             </div>
           `);
           $('<span class="ti-angle-left"></span>').click(function() { socket.emit('userPage') }).prependTo($chatBoxContent.find('.help-header'));
+          $('<textarea class="help-footer" rows="1" placeholder="Send a message..." id="messageBox"></textarea>').keypress(msgBoxHandler).appendTo($chatBoxContent);
           $helpBox.html($chatBoxContent);
           for (var i = 0; i < messages.length; i++) {
             var $message = $(`
@@ -532,7 +555,6 @@
                 <span>${ messages[i].message }</span>
               </div>
             `);
-            $('<textarea class="help-footer" rows="1" placeholder="Send a message..." id="messageBox"></textarea>').keypress(msgBoxHandler).appendTo($chatBoxContent);
             $('.help-body').append($message);
           }
         });
