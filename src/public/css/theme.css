@@ -897,18 +897,18 @@ nav .btn,
   top: 1px;
 }
 .nav-bar {
-  height: 55px;
-  max-height: 55px;
-  line-height: 53px;
+  height: 100px;
+  max-height: 100px;
+  line-height: 96px;
   border-bottom: 1px solid #ccc;
 }
 .nav-bar .module,
 .nav-bar .module-group {
-  height: 55px;
+  height: 100px;
 }
 .nav-bar a {
   display: inline-block;
-  height: 55px;
+  height: 100px;
 }
 .logo {
   max-height: 60%;
@@ -951,10 +951,10 @@ nav.bg-dark .logo-dark {
   width: auto;
 }
 .menu li a {
-  font-size: 11px;
+  font-size: 13px;
   text-transform: uppercase;
   font-weight: 600;
-  letter-spacing: 1px;
+  letter-spacing: 2px;
   color: #292929;
   opacity: 0.5;
   transition: all 0.3s ease;
@@ -973,7 +973,7 @@ nav.bg-dark .logo-dark {
   transition: all 0.3s ease;
   -webkit-transition: all 0.3s ease;
   -moz-transition: all 0.3s ease;
-  opacity: 1;
+  opacity: 0.9;
 }
 .menu > li:last-child {
   margin-right: 0;
@@ -1040,6 +1040,10 @@ nav.bg-dark .logo-dark {
   -webkit-transform: translate3d(0, 0px, 0);
   -moz-transform: translate3d(0, 0px, 0);
   visibility: visible;
+}
+.ti-menu:before {
+  color: #fff;
+  border: none;
 }
 .mega-menu {
   width: auto !important;
@@ -1394,8 +1398,6 @@ nav .cart-overview a {
     display: block !important;
   }
   .module.widget-handle {
-    border-left: none;
-    border-top: 1px solid #ccc;
     line-height: 40px;
     min-height: 40px;
   }
@@ -1437,7 +1439,6 @@ nav .cart-overview a {
     top: 18px;
   }
   .mobile-toggle {
-    border-left: 1px solid #ccc !important;
     border-bottom: none !important;
   }
   .mobile-toggle i {
