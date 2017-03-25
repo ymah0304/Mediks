@@ -37,6 +37,7 @@ io.on('connection', function(socket) {
 
   socket.on('sendMessage', function(message) {
     if (socket.admin) {
+      console.log(message);
       clients[message.user].messages.push({ type: 'admin', message: message.message });
       socket.broadcast.to(clients[message.user].id).emit('messageRecieved', message.message);
     } else {
