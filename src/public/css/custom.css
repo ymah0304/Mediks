@@ -265,12 +265,125 @@ nav {
   opacity: 0.8;
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (min-width: 615px) {
+  .cover .slides li:nth-child(1) .text-cont h1:nth-child(1) {
+    font-size: 96px;
+  }
+  .cover .slides li:nth-child(1) .text-cont h1:nth-child(2) {
+    font-size: 46px;
+  }
+  .cover .slides li:nth-child(1) .text-cont h1:nth-child(3) {
+    font-size: 62px;
+  }
+  .cover .slides li:nth-child(2) .text-cont h1:nth-child(1) {
+    font-size: 86px;
+  }
+  .cover .slides li:nth-child(2) .text-cont h1:nth-child(2) {
+    font-size: 62px;
+  }
+  .cover .slides li:nth-child(2) .text-cont h1:nth-child(3) {
+    font-size: 96px;
+  }
+  .cover .slides li:nth-child(3) .text-cont h1:nth-child(1) {
+    font-size: 96px;
+  }
+  .cover .slides li:nth-child(3) .text-cont h1:nth-child(2) {
+    font-size: 46px;
+  }
+  .cover .slides li:nth-child(3) .text-cont h1:nth-child(3) {
+    font-size: 82px;
+  }
+  .cover .slides li:nth-child(4) .text-cont h1:nth-child(1) {
+    font-size: 96px;
+  }
+  .cover .slides li:nth-child(4) .text-cont h1:nth-child(2) {
+    font-size: 46px;
+  }
+  .cover .slides li:nth-child(4) .text-cont h1:nth-child(3) {
+    font-size: 62px;
+  }
+  .cover .slides li:nth-child(5) .text-cont h1:nth-child(1) {
+    font-size: 72px;
+  }
+  .cover .slides li:nth-child(5) .text-cont h1:nth-child(2) {
+    font-size: 56px;
+  }
+  .cover .slides li:nth-child(5) .text-cont h1:nth-child(3) {
+    font-size: 72px;
+  }
+  .cover .slides li:nth-child(6) .text-cont h1:nth-child(1) {
+    font-size: 72px;
+  }
+  .cover .slides li:nth-child(6) .text-cont h1:nth-child(2) {
+    font-size: 40px;
+  }
+  .cover .slides li:nth-child(6) .text-cont h1:nth-child(3) {
+    font-size: 72px;
+  }
+}
+
+@media screen and (max-width: 614px) {
+  .cover .slides li:nth-child(1) .text-cont h1:nth-child(1) {
+    font-size: 66px;
+  }
+  .cover .slides li:nth-child(1) .text-cont h1:nth-child(2) {
+    font-size: 36px;
+  }
+  .cover .slides li:nth-child(1) .text-cont h1:nth-child(3) {
+    font-size: 42px;
+  }
+  .cover .slides li:nth-child(2) .text-cont h1:nth-child(1) {
+    font-size: 46px;
+  }
+  .cover .slides li:nth-child(2) .text-cont h1:nth-child(2) {
+    font-size: 32px;
+  }
+  .cover .slides li:nth-child(2) .text-cont h1:nth-child(3) {
+    font-size: 56px;
+  }
+  .cover .slides li:nth-child(3) .text-cont h1:nth-child(1) {
+    font-size: 54px;
+  }
+  .cover .slides li:nth-child(3) .text-cont h1:nth-child(2) {
+    font-size: 32px;
+  }
+  .cover .slides li:nth-child(3) .text-cont h1:nth-child(3) {
+    font-size: 62px;
+  }
+  .cover .slides li:nth-child(4) .text-cont h1:nth-child(1) {
+    font-size: 56px;
+  }
+  .cover .slides li:nth-child(4) .text-cont h1:nth-child(2) {
+    font-size: 26px;
+  }
+  .cover .slides li:nth-child(4) .text-cont h1:nth-child(3) {
+    font-size: 42px;
+  }
+  .cover .slides li:nth-child(5) .text-cont h1:nth-child(1) {
+    font-size: 52px;
+  }
+  .cover .slides li:nth-child(5) .text-cont h1:nth-child(2) {
+    font-size: 36px;
+  }
+  .cover .slides li:nth-child(5) .text-cont h1:nth-child(3) {
+    font-size: 52px;
+  }
+  .cover .slides li:nth-child(6) .text-cont h1:nth-child(1) {
+    font-size: 46px;
+  }
+  .cover .slides li:nth-child(6) .text-cont h1:nth-child(2) {
+    font-size: 26px;
+  }
+  .cover .slides li:nth-child(6) .text-cont h1:nth-child(3) {
+    font-size: 48px;
+  }
+  .cover .slides h1 {
+    padding-bottom: 5px;
+  }
+}
+
+@media screen and (max-width: 767px) and (min-width: 615px) {
   .cover .slides h1 {
     padding-bottom: 20px;
-  }
-
-  .cover .slides:nth-child(2) .textcont:nth-child(1) {
-    font-size: 56px;
   }
 }
