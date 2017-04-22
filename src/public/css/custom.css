@@ -264,3 +264,13 @@ nav {
   color: #fff;
   opacity: 0.8;
 }
+
+@media screen and (max-width: 767px) {
+  .cover .slides h1 {
+    padding-bottom: 20px;
+  }
+
+  .cover .slides:nth-child(2) .textcont:nth-child(1) {
+    font-size: 56px;
+  }
+}
